@@ -12,7 +12,7 @@ import time
 import subprocess
 
 
-def miyuki():
+def dawei():
     myurl = url.get()
     mytid = tid.get()
     mb.showinfo(title="Message", message=myurl + "\n" + mytid)
@@ -23,7 +23,7 @@ def miyuki():
     driver.implicitly_wait(30)
     time.sleep(5)
  
-    with open('Miyuki.csv', 'w', newline='') as f:
+    with open('dawei.csv', 'w', newline='') as f:
         mytid = "//*[@id='ContentPlaceHolder1_ContentPlaceHolder1_GridView1']"  
         myrow = driver.find_elements(By.XPATH, mytid + "/tbody/tr")
         mycol = driver.find_elements(By.XPATH, mytid + "/tbody/tr/th")
@@ -53,7 +53,7 @@ def miyuki():
 
 
 first = Tk()
-first.title("Miyuki")
+first.title("dawei")
 first.geometry('700x500')
 
 custom_font = ("TkDefaultFont", 20)
@@ -82,11 +82,11 @@ url.grid(row=0, column=1)
 tid.grid(row=1, column=1)
 
 
-btn = Button(first, text='Click me!', command = miyuki)
+btn = Button(first, text='Click me!', command = dawei)
 btn.grid(row=3, column=0, columnspan=2)
 
 custom_font = ("TkDefaultFont", 20)
-btn =Button(first, text= 'Open excel', command = miyuki)
+btn =Button(first, text= 'Open excel', command = dawei)
 btn.grid(row=4,column=0,columnspan=2)
 
 first.mainloop()
